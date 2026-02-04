@@ -12,7 +12,7 @@ export default function TeamSection() {
       {team.map((member) => (
         <StaggerItem key={member.id}>
           <div className="group">
-            <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100 mb-4">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-neutral-100 mb-4">
               <Image
                 src={member.image}
                 alt={member.name}

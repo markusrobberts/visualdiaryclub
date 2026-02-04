@@ -22,7 +22,7 @@ export default function ProjectGrid() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 text-sm transition-all duration-200 ${
+              className={`px-4 py-2 text-sm rounded-md transition-all duration-200 ${
                 activeCategory === category
                   ? "bg-neutral-900 text-white"
                   : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
@@ -46,7 +46,7 @@ export default function ProjectGrid() {
               transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100 mb-4">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100 mb-4">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -55,7 +55,7 @@ export default function ProjectGrid() {
                 />
                 <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-neutral-50/90 backdrop-blur-sm p-4 w-full">
+                  <div className="bg-neutral-50/90 backdrop-blur-sm rounded-md p-4 w-full">
                     <p className="text-sm text-neutral-600 leading-relaxed">
                       {project.description}
                     </p>

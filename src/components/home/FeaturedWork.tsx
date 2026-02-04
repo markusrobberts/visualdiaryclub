@@ -38,7 +38,7 @@ export default function FeaturedWork() {
           {featured.map((project) => (
             <StaggerItem key={project.id}>
               <Link href="/work" className="group block">
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100 mb-4">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100 mb-4">
                   <Image
                     src={project.image}
                     alt={project.title}
