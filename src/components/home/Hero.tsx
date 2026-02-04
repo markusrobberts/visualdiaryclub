@@ -16,7 +16,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <p className="text-sm uppercase tracking-[0.2em] text-neutral-400 mb-6">
-            Creative Agency
+            Performance + Creative Agency
           </p>
         </motion.div>
 
