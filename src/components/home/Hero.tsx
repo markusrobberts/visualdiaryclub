@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f5f5f5_1px,transparent_1px),linear-gradient(to_bottom,#f5f5f5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e3e6e0_1px,transparent_1px),linear-gradient(to_bottom,#e3e6e0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-32 text-center">
         <motion.div

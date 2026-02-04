@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #ffffff;
-  --color-foreground: #0a0a0a;
+  --color-background: #faf9f6;
+  --color-foreground: #393f4a;
+
+  /* Custom neutral palette */
+  --color-neutral-50: #faf9f6;
+  --color-neutral-100: #f0efec;
+  --color-neutral-200: #e3e6e0;
+  --color-neutral-300: #cdd0c9;
+  --color-neutral-400: #7e93ab;
+  --color-neutral-500: #86756a;
+  --color-neutral-600: #6b5f55;
+  --color-neutral-700: #515862;
+  --color-neutral-800: #454b56;
+  --color-neutral-900: #393f4a;
+  --color-neutral-950: #2d323b;
 }
 
 /* Base styles */
@@ -21,8 +34,8 @@ html {
 
 /* Selection styles */
 ::selection {
-  background-color: #171717;
-  color: #ffffff;
+  background-color: #393f4a;
+  color: #faf9f6;
 }
 
 /* Custom scrollbar */
@@ -35,17 +48,17 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d4;
+  background: #e3e6e0;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a3a3a3;
+  background: #7e93ab;
 }
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid #171717;
+  outline: 2px solid #393f4a;
   outline-offset: 2px;
 }
 
@@ -60,7 +73,7 @@ html {
 }
 
 .image-loading {
-  background: linear-gradient(90deg, #f5f5f5 25%, #e5e5e5 50%, #f5f5f5 75%);
+  background: linear-gradient(90deg, #f0efec 25%, #e3e6e0 50%, #f0efec 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
 }

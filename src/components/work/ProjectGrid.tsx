@@ -55,7 +55,7 @@ export default function ProjectGrid() {
                 />
                 <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/90 backdrop-blur-sm p-4 w-full">
+                  <div className="bg-neutral-50/90 backdrop-blur-sm p-4 w-full">
                     <p className="text-sm text-neutral-600 leading-relaxed">
                       {project.description}
                     </p>
