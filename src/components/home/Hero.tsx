@@ -45,8 +45,8 @@ export default function Hero() {
           }}
           className="mt-8 text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed"
         >
-          Visual Diary Club is a creative agency specializing in brand identity,
-          art direction, and digital experiences for brands that dare to stand
+          Visual Diary Club is a creative agency specializing in website design,
+          ecommerce strategy, and digital marketing for brands that dare to stand
           out.
         </motion.p>
 

@@ -179,10 +179,11 @@ export default function ContactPage() {
                       className="w-full border-b border-neutral-200 py-3 text-neutral-900 focus:border-neutral-900 focus:outline-none transition-colors bg-transparent appearance-none"
                     >
                       <option value="">Select a service</option>
-                      <option value="branding">Brand Identity</option>
-                      <option value="direction">Art Direction</option>
-                      <option value="digital">Digital Design</option>
-                      <option value="campaign">Campaign & Content</option>
+                      <option value="website">Website Design</option>
+                      <option value="ecommerce">Ecommerce Strategy</option>
+                      <option value="email">Email Marketing</option>
+                      <option value="ads">Paid Advertising</option>
+                      <option value="social">Social Media Management</option>
                       <option value="other">Other</option>
                     </select>
                   </div>

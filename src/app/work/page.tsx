@@ -5,7 +5,7 @@ import FadeIn from "@/components/animations/FadeIn";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Explore our portfolio of brand identity, editorial, campaign, and digital projects.",
+    "Explore our portfolio of website design, ecommerce, email marketing, advertising, and social media projects.",
 };
 
 export default function WorkPage() {
@@ -20,8 +20,8 @@ export default function WorkPage() {
             Our Work
           </h1>
           <p className="text-neutral-500 max-w-2xl mb-16 leading-relaxed">
-            A curated selection of projects across brand identity, editorial,
-            campaigns, and digital experiences.
+            A curated selection of projects across website design, ecommerce,
+            email marketing, paid advertising, and social media.
           </p>
         </FadeIn>
         <ProjectGrid />

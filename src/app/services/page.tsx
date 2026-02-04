@@ -9,7 +9,7 @@ import ContactCTA from "@/components/home/ContactCTA";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "From brand identity to digital design, explore the creative services Visual Diary Club offers.",
+    "From website design to social media management, explore the creative services Visual Diary Club offers.",
 };
 
 export default function ServicesPage() {
@@ -101,7 +101,7 @@ export default function ServicesPage() {
                 step: "02",
                 title: "Strategy",
                 description:
-                  "We define the creative direction, establish key messages, and map out the project roadmap.",
+                  "We define the approach, establish key messages, and map out the project roadmap.",
               },
               {
                 step: "03",

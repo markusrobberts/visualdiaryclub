@@ -9,13 +9,14 @@ export const metadata: Metadata = {
     template: "%s | Visual Diary Club",
   },
   description:
-    "Visual Diary Club is a creative agency specializing in brand identity, art direction, and digital experiences.",
+    "Visual Diary Club is a creative agency specializing in website design, ecommerce strategy, email marketing, paid advertising, and social media management.",
   keywords: [
     "creative agency",
-    "brand identity",
-    "art direction",
-    "digital design",
-    "visual storytelling",
+    "website design",
+    "ecommerce strategy",
+    "email marketing",
+    "paid advertising",
+    "social media management",
   ],
 };
 

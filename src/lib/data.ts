@@ -10,30 +10,30 @@ export const navigation: NavItem[] = [
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Lumina Brand Identity",
-    category: "Branding",
+    title: "Lumina Skincare",
+    category: "Website Design",
     description:
-      "A complete visual identity system for a luxury skincare brand, from logo to packaging.",
+      "A bespoke website for a luxury skincare brand, focused on storytelling and seamless product discovery.",
     image: "/images/placeholder.svg",
     year: "2025",
     client: "Lumina Skincare",
   },
   {
     id: "2",
-    title: "Horizon Editorial",
-    category: "Editorial",
+    title: "Horizon Store Relaunch",
+    category: "Ecommerce",
     description:
-      "Art direction and photography for a travel magazine's anniversary edition.",
+      "Full ecommerce strategy and platform redesign for a lifestyle brand, boosting conversion by 40%.",
     image: "/images/placeholder.svg",
     year: "2025",
-    client: "Horizon Magazine",
+    client: "Horizon Living",
   },
   {
     id: "3",
-    title: "Solstice Campaign",
-    category: "Campaign",
+    title: "Solstice Retention Campaign",
+    category: "Email Marketing",
     description:
-      "Multi-platform advertising campaign for a sustainable fashion label's summer collection.",
+      "Automated email flows and seasonal campaigns for a sustainable fashion label's subscriber base.",
     image: "/images/placeholder.svg",
     year: "2024",
     client: "Solstice Fashion",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
   {
     id: "4",
     title: "Forma Architecture",
-    category: "Digital",
+    category: "Website Design",
     description:
       "Website design and development for an award-winning architecture studio.",
     image: "/images/placeholder.svg",
@@ -50,10 +50,10 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    title: "Noctis Film Festival",
-    category: "Branding",
+    title: "Noctis Paid Campaign",
+    category: "Paid Advertising",
     description:
-      "Visual identity and campaign materials for an independent film festival.",
+      "Multi-platform paid advertising campaign driving ticket sales for an independent film festival.",
     image: "/images/placeholder.svg",
     year: "2024",
     client: "Noctis Festival",
@@ -61,29 +61,29 @@ export const projects: Project[] = [
   {
     id: "6",
     title: "Aura Product Launch",
-    category: "Campaign",
+    category: "Paid Advertising",
     description:
-      "Launch campaign including film, photography, and digital assets for a tech product.",
+      "Paid search and social campaigns for a tech product launch, achieving 5x return on ad spend.",
     image: "/images/placeholder.svg",
     year: "2024",
     client: "Aura Tech",
   },
   {
     id: "7",
-    title: "Terracotta Editorial",
-    category: "Editorial",
+    title: "Terracotta Social Growth",
+    category: "Social Media",
     description:
-      "Editorial shoot exploring the intersection of architecture and natural landscapes.",
+      "Social media management and content strategy that grew an interiors brand's following by 200%.",
     image: "/images/placeholder.svg",
     year: "2023",
-    client: "Terracotta Press",
+    client: "Terracotta Interiors",
   },
   {
     id: "8",
-    title: "Voss Digital Platform",
-    category: "Digital",
+    title: "Voss Online Store",
+    category: "Ecommerce",
     description:
-      "E-commerce platform design for a Scandinavian furniture brand.",
+      "E-commerce strategy and storefront design for a Scandinavian furniture brand.",
     image: "/images/placeholder.svg",
     year: "2023",
     client: "Voss Furniture",
@@ -92,10 +92,11 @@ export const projects: Project[] = [
 
 export const categories = [
   "All",
-  "Branding",
-  "Editorial",
-  "Campaign",
-  "Digital",
+  "Website Design",
+  "Ecommerce",
+  "Email Marketing",
+  "Paid Advertising",
+  "Social Media",
 ];
 
 export const team: TeamMember[] = [
@@ -132,58 +133,72 @@ export const team: TeamMember[] = [
 export const services: Service[] = [
   {
     id: "1",
-    title: "Brand Identity",
+    title: "Website Design",
     description:
-      "We craft visual identities that tell your story. From logo design to comprehensive brand systems, we create cohesive visual languages that resonate with your audience.",
+      "We design and build websites that are as beautiful as they are functional. From landing pages to full-scale platforms, every pixel serves a purpose.",
     features: [
-      "Logo & Mark Design",
-      "Brand Guidelines",
-      "Visual Identity Systems",
-      "Brand Strategy",
-      "Naming & Verbal Identity",
+      "Custom Website Design",
+      "UI/UX Design",
+      "Responsive Development",
+      "CMS Integration",
+      "Performance Optimization",
     ],
-    icon: "identity",
+    icon: "website",
   },
   {
     id: "2",
-    title: "Art Direction",
+    title: "Ecommerce Strategy",
     description:
-      "Our art direction brings concepts to life through carefully curated visual narratives. We oversee every detail to ensure your vision is executed with precision.",
+      "We help brands sell smarter online. From platform selection to conversion optimization, we build ecommerce experiences that drive revenue.",
     features: [
-      "Creative Concepting",
-      "Shoot Direction",
-      "Visual Storytelling",
-      "Mood & Style Development",
-      "Post-Production Oversight",
+      "Platform Selection & Setup",
+      "Conversion Rate Optimization",
+      "Product Page Design",
+      "Checkout Flow Optimization",
+      "Analytics & Reporting",
     ],
-    icon: "direction",
+    icon: "ecommerce",
   },
   {
     id: "3",
-    title: "Digital Design",
+    title: "Email Marketing",
     description:
-      "We design digital experiences that are as beautiful as they are functional. From websites to apps, every pixel serves a purpose.",
+      "We craft email campaigns that people actually want to open. Strategic segmentation meets compelling design to nurture leads and drive engagement.",
     features: [
-      "Website Design",
-      "UI/UX Design",
-      "E-Commerce",
-      "Motion Design",
-      "Interactive Experiences",
+      "Campaign Strategy",
+      "Template Design",
+      "Automation & Flows",
+      "List Segmentation",
+      "A/B Testing & Optimization",
     ],
-    icon: "digital",
+    icon: "email",
   },
   {
     id: "4",
-    title: "Campaign & Content",
+    title: "Paid Advertising",
     description:
-      "We produce campaigns that cut through the noise. Strategic thinking meets creative execution across every touchpoint.",
+      "We put your brand in front of the right audience at the right time. Data-driven campaigns across search and social that maximize your return on ad spend.",
     features: [
+      "Google Ads Management",
+      "Meta & Social Ads",
       "Campaign Strategy",
-      "Content Creation",
-      "Social Media",
-      "Photography",
-      "Film & Video",
+      "Creative & Copy",
+      "Performance Reporting",
     ],
-    icon: "campaign",
+    icon: "ads",
+  },
+  {
+    id: "5",
+    title: "Social Media Management",
+    description:
+      "We build and manage social presences that grow communities and strengthen brands. Consistent content, authentic engagement, measurable results.",
+    features: [
+      "Content Strategy & Planning",
+      "Content Creation",
+      "Community Management",
+      "Analytics & Insights",
+      "Platform Growth",
+    ],
+    icon: "social",
   },
 ];
