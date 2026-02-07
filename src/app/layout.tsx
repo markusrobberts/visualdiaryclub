@@ -5,18 +5,20 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Visual Diary Club | Creative Agency",
-    template: "%s | Visual Diary Club",
+    default: "ZYRA | Performance Marketing Agency",
+    template: "%s | ZYRA",
   },
   description:
-    "Visual Diary Club is a creative agency specializing in website design, ecommerce strategy, email marketing, paid advertising, and social media management.",
+    "ZYRA transforms scattered marketing into high-performing systems. We execute email marketing, CRO, SEO, and paid media strategies that drive measurable growth.",
   keywords: [
-    "creative agency",
-    "website design",
-    "ecommerce strategy",
+    "performance marketing",
     "email marketing",
-    "paid advertising",
-    "social media management",
+    "CRO",
+    "conversion rate optimization",
+    "SEO",
+    "paid media",
+    "growth marketing",
+    "digital marketing agency",
   ],
 };
 
@@ -26,10 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="dark">
+      <body className="antialiased bg-neutral-950 text-neutral-50">
         <Header />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

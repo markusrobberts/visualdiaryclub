@@ -3,83 +3,111 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { projects, categories } from "@/lib/data";
+import Link from "next/link";
+import { caseStudies } from "@/lib/data";
 import FadeIn from "@/components/animations/FadeIn";
 
+const serviceFilters = [
+  "All",
+  "Email Marketing",
+  "Paid Media",
+  "CRO",
+  "SEO",
+];
+
 export default function ProjectGrid() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("All");
 
   const filtered =
-    activeCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
+    activeFilter === "All"
+      ? caseStudies
+      : caseStudies.filter((study) => study.services.includes(activeFilter));
 
   return (
     <div>
       <FadeIn>
         <div className="flex flex-wrap gap-2 mb-12">
-          {categories.map((category) => (
+          {serviceFilters.map((filter) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
               className={`px-4 py-2 text-sm rounded-md transition-all duration-200 ${
-                activeCategory === category
-                  ? "bg-neutral-900 text-white"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                activeFilter === filter
+                  ? "bg-accent text-white"
+                  : "bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-neutral-200"
               }`}
             >
-              {category}
+              {filter}
             </button>
           ))}
         </div>
       </FadeIn>
 
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         <AnimatePresence mode="popLayout">
-          {filtered.map((project) => (
+          {filtered.map((study) => (
             <motion.div
-              key={project.id}
+              key={study.id}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100 mb-4">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
-                <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-neutral-50/90 backdrop-blur-sm rounded-md p-4 w-full">
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      {project.description}
-                    </p>
+              <Link href="/contact" className="group block">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-800 mb-4">
+                  <Image
+                    src={study.image}
+                    alt={study.client}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="flex flex-wrap gap-2">
+                      {study.services.map((service) => (
+                        <span
+                          key={service}
+                          className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent"
+                        >
+                          {service}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-neutral-500 mt-1">
-                    {project.client}
+
+                <div className="space-y-3">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-lg font-semibold text-neutral-50 group-hover:text-accent transition-colors duration-200">
+                      {study.client}
+                    </h3>
+                    <span className="text-sm text-neutral-500">
+                      {study.industry}
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-neutral-400 leading-relaxed">
+                    {study.description}
                   </p>
+
+                  <div className="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-800">
+                    {study.results.map((result) => (
+                      <div key={result.metric}>
+                        <p className="text-lg font-bold text-neutral-50">
+                          {result.value}
+                        </p>
+                        <p className="text-xs text-neutral-500">
+                          {result.metric}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="text-right">
-                  <span className="text-xs text-neutral-400 block">
-                    {project.category}
-                  </span>
-                  <span className="text-xs text-neutral-400">
-                    {project.year}
-                  </span>
-                </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </AnimatePresence>

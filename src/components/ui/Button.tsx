@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   href?: string;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   className?: string;
   type?: "button" | "submit";
@@ -13,17 +13,19 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-neutral-900 text-white hover:bg-neutral-800 active:bg-neutral-700",
+    "bg-accent text-white hover:bg-accent-light active:bg-accent-dark",
   secondary:
-    "bg-neutral-100 text-neutral-900 hover:bg-neutral-200 active:bg-neutral-300",
+    "bg-neutral-800 text-neutral-50 hover:bg-neutral-700 active:bg-neutral-600",
   outline:
-    "border border-neutral-300 text-neutral-900 hover:border-neutral-900 hover:bg-neutral-50",
+    "border border-neutral-700 text-neutral-50 hover:border-accent hover:bg-neutral-900",
+  ghost:
+    "text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800",
 };
 
 const sizes = {
   sm: "px-4 py-2 text-xs",
   md: "px-6 py-2.5 text-sm",
-  lg: "px-8 py-3 text-sm",
+  lg: "px-8 py-3 text-base",
 };
 
 export default function Button({

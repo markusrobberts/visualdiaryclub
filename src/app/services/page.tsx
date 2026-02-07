@@ -9,26 +9,28 @@ import ContactCTA from "@/components/home/ContactCTA";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "From website design to social media management, explore the creative services Visual Diary Club offers.",
+    "Full-stack performance marketing services: Email Marketing, CRO, SEO, and Paid Media. All working together to scale your revenue.",
 };
 
 export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-24 lg:py-32">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
-            <p className="text-sm uppercase tracking-[0.2em] text-neutral-400 mb-3">
+            <span className="text-sm font-medium text-accent uppercase tracking-wider">
               Services
-            </p>
-            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-              What We Offer
+            </span>
+            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-50 mb-6">
+              Full-stack performance
+              <br />
+              <span className="gradient-text">marketing</span>
             </h1>
-            <p className="text-neutral-500 max-w-2xl leading-relaxed">
-              We provide end-to-end creative services, from initial strategy
-              through to final delivery. Every service is tailored to your
-              brand&apos;s specific needs.
+            <p className="text-lg text-neutral-400 max-w-2xl leading-relaxed">
+              We don&apos;t do silos. Every channel works together as one
+              integrated system, optimized for maximum ROI and sustainable
+              growth.
             </p>
           </FadeIn>
         </div>
@@ -37,39 +39,64 @@ export default function ServicesPage() {
       {/* Service Details */}
       <section className="pb-24 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <StaggerChildren className="space-y-24">
+          <StaggerChildren className="space-y-16">
             {services.map((service, index) => (
               <StaggerItem key={service.id}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                  <div>
-                    <div className="flex items-center gap-4 mb-6">
-                      <span className="text-xs text-neutral-400">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <div className="h-px flex-1 bg-neutral-200" />
+                <div className="p-8 lg:p-12 rounded-2xl border border-neutral-800 bg-neutral-900/50">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                    <div>
+                      <div className="flex items-center gap-4 mb-6">
+                        <span className="text-sm text-accent font-medium">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <div className="h-px flex-1 bg-neutral-800" />
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-50 mb-4">
+                        {service.title}
+                      </h2>
+                      <p className="text-neutral-400 leading-relaxed mb-6">
+                        {service.description}
+                      </p>
+
+                      {service.stat && (
+                        <div className="inline-flex items-baseline gap-2 px-4 py-2 rounded-lg bg-neutral-800">
+                          <span className="text-2xl font-bold gradient-text">
+                            {service.stat}
+                          </span>
+                          <span className="text-sm text-neutral-400">
+                            {service.statLabel}
+                          </span>
+                        </div>
+                      )}
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
-                      {service.title}
-                    </h2>
-                    <p className="text-neutral-500 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-medium uppercase tracking-wider text-neutral-400 mb-6">
-                      What&apos;s Included
-                    </h3>
-                    <ul className="space-y-4">
-                      {service.features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-center gap-3 text-neutral-700"
-                        >
-                          <span className="w-1.5 h-1.5 bg-neutral-900 rounded-full flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    <div>
+                      <h3 className="text-xs font-medium uppercase tracking-wider text-accent mb-6">
+                        What&apos;s Included
+                      </h3>
+                      <ul className="space-y-4">
+                        {service.features.map((feature) => (
+                          <li
+                            key={feature}
+                            className="flex items-center gap-3 text-neutral-300"
+                          >
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                              <svg
+                                className="w-3 h-3 text-accent"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </StaggerItem>
@@ -79,52 +106,52 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="py-24 lg:py-32 bg-neutral-50">
+      <section className="py-24 lg:py-32 bg-neutral-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
-            <p className="text-sm uppercase tracking-[0.2em] text-neutral-400 mb-3">
+            <span className="text-sm font-medium text-accent uppercase tracking-wider">
               Process
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-900 mb-16">
-              How We Work Together
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-neutral-50 mb-16">
+              How we work together
             </h2>
           </FadeIn>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 step: "01",
-                title: "Discovery",
+                title: "Audit",
                 description:
-                  "We start by listening. Understanding your brand, audience, and objectives guides everything that follows.",
+                  "We analyze your current marketing, identify gaps, and find the revenue you're leaving on the table.",
               },
               {
                 step: "02",
                 title: "Strategy",
                 description:
-                  "We define the approach, establish key messages, and map out the project roadmap.",
+                  "We build a custom growth roadmap with clear KPIs, timelines, and expected outcomes.",
               },
               {
                 step: "03",
-                title: "Creation",
+                title: "Execute",
                 description:
-                  "With a clear plan in place, our team brings the vision to life through iterative design and development.",
+                  "Our team implements everything—from email flows to ad campaigns to CRO tests.",
               },
               {
                 step: "04",
-                title: "Delivery",
+                title: "Optimize",
                 description:
-                  "Final assets are refined, tested, and delivered with comprehensive guidelines for implementation.",
+                  "We continuously test, measure, and improve. Growth never stops, and neither do we.",
               },
             ].map((process) => (
               <StaggerItem key={process.step}>
-                <div>
-                  <span className="text-3xl font-semibold text-neutral-200 block mb-4">
+                <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-950 h-full">
+                  <span className="text-3xl font-bold text-neutral-700 block mb-4">
                     {process.step}
                   </span>
-                  <h3 className="text-lg font-medium text-neutral-900 mb-3">
+                  <h3 className="text-lg font-semibold text-neutral-50 mb-3">
                     {process.title}
                   </h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">
+                  <p className="text-sm text-neutral-400 leading-relaxed">
                     {process.description}
                   </p>
                 </div>

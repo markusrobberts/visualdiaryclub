@@ -1,21 +1,28 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #faf9f6;
-  --color-foreground: #393f4a;
+  --color-background: #09090b;
+  --color-foreground: #fafafa;
 
-  /* Custom neutral palette */
-  --color-neutral-50: #faf9f6;
-  --color-neutral-100: #f0efec;
-  --color-neutral-200: #e3e6e0;
-  --color-neutral-300: #cdd0c9;
-  --color-neutral-400: #8a9bae;
-  --color-neutral-500: #7e93ab;
-  --color-neutral-600: #64788f;
-  --color-neutral-700: #515862;
-  --color-neutral-800: #454b56;
-  --color-neutral-900: #393f4a;
-  --color-neutral-950: #2d323b;
+  /* Custom neutral palette - dark theme */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+  --color-neutral-950: #09090b;
+
+  /* Brand accent colors */
+  --color-accent: #8b5cf6;
+  --color-accent-light: #a78bfa;
+  --color-accent-dark: #7c3aed;
+  --color-cyan: #06b6d4;
+  --color-emerald: #10b981;
 }
 
 /* Base styles */
@@ -34,8 +41,8 @@ html {
 
 /* Selection styles */
 ::selection {
-  background-color: #393f4a;
-  color: #faf9f6;
+  background-color: #8b5cf6;
+  color: #fafafa;
 }
 
 /* Custom scrollbar */
@@ -44,22 +51,52 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #18181b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e3e6e0;
+  background: #3f3f46;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7e93ab;
+  background: #8b5cf6;
 }
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid #393f4a;
+  outline: 2px solid #8b5cf6;
   outline-offset: 2px;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border utility */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
 }
 
 /* Image placeholder shimmer */
@@ -73,7 +110,7 @@ html {
 }
 
 .image-loading {
-  background: linear-gradient(90deg, #f0efec 25%, #e3e6e0 50%, #f0efec 75%);
+  background: linear-gradient(90deg, #18181b 25%, #27272a 50%, #18181b 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
 }

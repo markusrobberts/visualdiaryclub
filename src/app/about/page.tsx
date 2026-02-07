@@ -3,43 +3,45 @@ import FadeIn from "@/components/animations/FadeIn";
 import TeamSection from "@/components/about/TeamSection";
 import ApproachSection from "@/components/about/ApproachSection";
 import ContactCTA from "@/components/home/ContactCTA";
+import { stats } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Visual Diary Club — our team, our approach, and what drives us.",
+    "Meet the ZYRA team — performance marketers obsessed with growth, data, and results.",
 };
 
 export default function AboutPage() {
   return (
     <>
       {/* Intro */}
-      <section className="py-24 lg:py-32">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
-            <p className="text-sm uppercase tracking-[0.2em] text-neutral-400 mb-3">
-              About Us
-            </p>
-            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-8">
-              We are Visual
+            <span className="text-sm font-medium text-accent uppercase tracking-wider">
+              About ZYRA
+            </span>
+            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-50 mb-8">
+              Growth is a system,
               <br />
-              Diary Club
+              <span className="gradient-text">not a series of hacks</span>
             </h1>
           </FadeIn>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             <FadeIn delay={0.2}>
-              <p className="text-lg text-neutral-600 leading-relaxed">
-                Founded with a belief that visual communication has the power to
-                transform brands, we&apos;ve spent over a decade helping companies
-                find their voice through design, photography, and digital craft.
+              <p className="text-lg text-neutral-400 leading-relaxed">
+                ZYRA was founded with a simple belief: most brands don&apos;t
+                have a marketing problem—they have a systems problem.
+                Scattered efforts across channels, no unified strategy, and
+                agencies that advise but never execute.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <p className="text-lg text-neutral-600 leading-relaxed">
-                We&apos;re a tight-knit team of creatives, strategists, and makers.
-                Every project we take on receives our full attention — we don&apos;t
-                believe in assembly lines. We believe in craft, in storytelling,
-                and in work that lasts.
+              <p className="text-lg text-neutral-400 leading-relaxed">
+                We built ZYRA to change that. We&apos;re a performance
+                marketing team that integrates email, CRO, SEO, and paid
+                media into one cohesive growth engine. We don&apos;t just
+                strategize—we execute, measure, and optimize every single day.
               </p>
             </FadeIn>
           </div>
@@ -47,21 +49,16 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-neutral-50">
+      <section className="py-16 bg-neutral-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { number: "10+", label: "Years in Business" },
-                { number: "200+", label: "Projects Completed" },
-                { number: "80+", label: "Clients Worldwide" },
-                { number: "15", label: "Awards Won" },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="text-3xl sm:text-4xl font-semibold text-neutral-900">
-                    {stat.number}
+                  <p className="text-3xl sm:text-4xl font-bold gradient-text">
+                    {stat.value}
                   </p>
-                  <p className="text-sm text-neutral-500 mt-2">{stat.label}</p>
+                  <p className="text-sm text-neutral-400 mt-2">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -73,13 +70,13 @@ export default function AboutPage() {
       <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
-            <p className="text-sm uppercase tracking-[0.2em] text-neutral-400 mb-3">
+            <span className="text-sm font-medium text-accent uppercase tracking-wider">
               The Team
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-900 mb-16">
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-neutral-50 mb-16">
               The people behind
               <br />
-              the work
+              your growth
             </h2>
           </FadeIn>
           <TeamSection />
@@ -87,7 +84,7 @@ export default function AboutPage() {
       </section>
 
       {/* Approach */}
-      <section className="py-24 lg:py-32 bg-neutral-50">
+      <section className="py-24 lg:py-32 bg-neutral-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ApproachSection />
         </div>

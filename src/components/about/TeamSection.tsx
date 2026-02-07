@@ -12,17 +12,18 @@ export default function TeamSection() {
       {team.map((member) => (
         <StaggerItem key={member.id}>
           <div className="group">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-neutral-100 mb-4">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-neutral-800 mb-4">
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent" />
             </div>
-            <h3 className="font-medium text-neutral-900">{member.name}</h3>
-            <p className="text-sm text-neutral-400 mt-1">{member.role}</p>
-            <p className="text-sm text-neutral-500 mt-3 leading-relaxed">
+            <h3 className="font-semibold text-neutral-50">{member.name}</h3>
+            <p className="text-sm text-accent mt-1">{member.role}</p>
+            <p className="text-sm text-neutral-400 mt-3 leading-relaxed">
               {member.bio}
             </p>
           </div>

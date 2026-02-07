@@ -11,14 +11,14 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-neutral-50/80 backdrop-blur-md border-b border-neutral-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-800">
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-lg font-semibold tracking-tight text-neutral-900"
+            className="text-xl font-bold tracking-tight text-neutral-50"
           >
-            Visual Diary Club
+            ZYRA
           </Link>
 
           {/* Desktop nav */}
@@ -27,15 +27,21 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm transition-colors duration-200 ${
+                className={`text-sm font-medium transition-colors duration-200 ${
                   pathname === item.href
-                    ? "text-neutral-900"
-                    : "text-neutral-500 hover:text-neutral-900"
+                    ? "text-neutral-50"
+                    : "text-neutral-400 hover:text-neutral-50"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="ml-4 px-5 py-2 text-sm font-medium rounded-md bg-accent text-white hover:bg-accent-light transition-colors duration-200"
+            >
+              Get Started
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -50,7 +56,7 @@ export default function Header() {
                   ? { rotate: 45, y: 0 }
                   : { rotate: 0, y: -4 }
               }
-              className="absolute w-5 h-px bg-neutral-900 block"
+              className="absolute w-5 h-px bg-neutral-50 block"
               transition={{ duration: 0.2 }}
             />
             <motion.span
@@ -59,7 +65,7 @@ export default function Header() {
                   ? { opacity: 0 }
                   : { opacity: 1 }
               }
-              className="absolute w-5 h-px bg-neutral-900 block"
+              className="absolute w-5 h-px bg-neutral-50 block"
               transition={{ duration: 0.2 }}
             />
             <motion.span
@@ -68,7 +74,7 @@ export default function Header() {
                   ? { rotate: -45, y: 0 }
                   : { rotate: 0, y: 4 }
               }
-              className="absolute w-5 h-px bg-neutral-900 block"
+              className="absolute w-5 h-px bg-neutral-50 block"
               transition={{ duration: 0.2 }}
             />
           </button>
@@ -83,7 +89,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="md:hidden overflow-hidden bg-neutral-50 border-b border-neutral-100"
+            className="md:hidden overflow-hidden bg-neutral-950 border-b border-neutral-800"
           >
             <div className="px-6 py-6 space-y-4">
               {navigation.map((item) => (
@@ -91,15 +97,22 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block text-lg ${
+                  className={`block text-lg font-medium ${
                     pathname === item.href
-                      ? "text-neutral-900"
-                      : "text-neutral-500"
+                      ? "text-neutral-50"
+                      : "text-neutral-400"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full text-center mt-4 px-5 py-3 text-sm font-medium rounded-md bg-accent text-white"
+              >
+                Get Started
+              </Link>
             </div>
           </motion.div>
         )}
